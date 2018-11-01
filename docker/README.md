@@ -12,5 +12,6 @@
 - Run `docker/docker-cli exec`
 - At this point you must be inside the docker container, in the root folder of the project. From there, you can run the commands as usual:
 	- `make run-server` to start inner containers and run the mattermost-server
+	- `make stop-server` to stop mattermost-server
 - When you finish working with the container, type `exit`
 - Run `docker/docker-cli stop` to stop and remove the service (this also cleanup the inner docker first).
