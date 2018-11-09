@@ -7,6 +7,8 @@ services:
     container_name: mattermost-dev
     volumes:
       - ..:/root/go/src/github.com/mattermost/mattermost-server:Z
+      - ../../mattermost-webapp:/root/go/src/github.com/mattermost/mattermost-webapp:Z
+      - ../../mattermost-redux:/root/go/src/github.com/mattermost/mattermost-redux:Z
     tty: true
     privileged: true
     ports:

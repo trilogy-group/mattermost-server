@@ -30,7 +30,7 @@ stop()
     docker exec mattermost-dev docker stop $(docker ps -aq)
     docker exec mattermost-dev docker system prune -a -f
     echo "Tearing down"
-    docker-compose -f docker/docker-compose.yml down
+    docker-compose -f docker/docker-compose.yml down --remove-orphans
 }
 
 build()
