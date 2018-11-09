@@ -1,0 +1,17 @@
+version: '3'
+services:
+  mattermost:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    container_name: mattermost-dev
+    volumes:
+      - ..:/root/go/src/github.com/mattermost/mattermost-server:Z
+      - ../../mattermost-webapp:/root/go/src/github.com/mattermost/mattermost-webapp:Z
+      - ../../mattermost-redux:/root/go/src/github.com/mattermost/mattermost-redux:Z
+    tty: true
+    privileged: true
+    ports:
+      - "8065:8065"
+    extra_hosts:
+      - "dockerhost:127.0.0.1"
